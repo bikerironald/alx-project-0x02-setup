@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../components/layout/Header';
-import Button from '../components/common/Button';
+import Button from '@/components/common/Button';
 
 const About: React.FC = () => {
   return (
@@ -28,5 +28,3 @@ const About: React.FC = () => {
 };
 
 export default About;
-// This code defines an About page for a Next.js application.
-// It imports a Header component for the page header and a Button component for interactive buttons.
