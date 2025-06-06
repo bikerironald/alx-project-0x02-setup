@@ -7,13 +7,13 @@ const sizeClasses: Record<NonNullable<ButtonProps['size']>, string> = {
   large: 'px-6 py-3 text-lg',
 };
 
-const shapeClasses: Record<'rounded-sm' | 'rounded-md' | 'rounded-full', string> = {
+const shapeClasses: Record<NonNullable<ButtonProps['shape']>, string> = {
   'rounded-sm': 'rounded-sm',
   'rounded-md': 'rounded-md',
   'rounded-full': 'rounded-full',
 };
 
-const Button: React.FC<ButtonProps & { shape?: 'rounded-sm' | 'rounded-md' | 'rounded-full' }> = ({
+const Button: React.FC<ButtonProps> = ({
   children,
   size = 'medium',
   shape = 'rounded-md',
@@ -25,7 +25,7 @@ const Button: React.FC<ButtonProps & { shape?: 'rounded-sm' | 'rounded-md' | 'ro
     <button
       type={type}
       onClick={onClick}
-      className={`bg-blue-600 text-white ${sizeClasses[size]} ${shapeClasses[shape as keyof typeof shapeClasses]} ${className}`}
+      className={`bg-blue-600 text-white ${sizeClasses[size]} ${shapeClasses[shape]} ${className}`}
     >
       {children}
     </button>

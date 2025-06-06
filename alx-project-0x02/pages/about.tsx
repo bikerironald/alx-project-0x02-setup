@@ -12,14 +12,14 @@ const About: React.FC = () => {
           This page provides information about the ALX Project 2.
         </p>
         <div className="flex space-x-4">
-          <Button size="small" shape="rounded">
-            Small Rounded
+          <Button size="small" shape="rounded-sm">
+            Small Rounded-sm
           </Button>
-          <Button size="medium" shape="rounded">
-            Medium Rounded
+          <Button size="medium" shape="rounded-md">
+            Medium Rounded-md
           </Button>
-          <Button size="large" shape="rounded">
-            Large Rounded
+          <Button size="large" shape="rounded-full">
+            Large Rounded-full
           </Button>
         </div>
       </main>
@@ -28,3 +28,5 @@ const About: React.FC = () => {
 };
 
 export default About;
+// This code defines an About page for a Next.js application.
+// It imports a Header component for the page header and a Button component for interactive buttons.
