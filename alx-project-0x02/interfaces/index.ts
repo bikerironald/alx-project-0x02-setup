@@ -20,6 +20,13 @@ export interface PostProps {
   userId?: string | number;
 }
 
+export interface Address {
+  street: string;
+  suite: string;
+  city: string;
+  zipcode: string;
+}
+
 export interface UserProps {
   id: number;
   name: string;
@@ -27,4 +34,5 @@ export interface UserProps {
   username?: string;
   phone?: string;
   website?: string;
+  address?: Address;
 }
