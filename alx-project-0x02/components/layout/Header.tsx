@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const Header: React.FC = () => (
   <header className="w-full bg-blue-600 py-4 shadow">
@@ -7,14 +8,14 @@ const Header: React.FC = () => (
       <nav>
         <ul className="flex space-x-4">
           <li>
-            <a href="/home" className="text-white hover:underline">
+            <Link href="/home" className="text-white hover:underline">
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/about" className="text-white hover:underline">
+            <Link href="/about" className="text-white hover:underline">
               About
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
