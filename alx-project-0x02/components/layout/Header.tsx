@@ -7,8 +7,13 @@ const Header: React.FC = () => (
       <nav>
         <ul className="flex space-x-4">
           <li>
-            <a href="/" className="text-white hover:underline">
+            <a href="/home" className="text-white hover:underline">
               Home
+            </a>
+          </li>
+          <li>
+            <a href="/about" className="text-white hover:underline">
+              About
             </a>
           </li>
         </ul>
