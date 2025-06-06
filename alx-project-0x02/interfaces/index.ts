@@ -17,4 +17,5 @@ export interface PostProps {
   content: string;
   author?: string;
   date?: string;
+  userId?: string | number;
 }

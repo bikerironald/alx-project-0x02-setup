@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Header from '@/components/layout/Header';
 import PostCard from '@/components/common/PostCard';
 
@@ -9,19 +9,11 @@ interface Post {
   userId: number;
 }
 
-const Posts: React.FC = () => {
-  const [posts, setPosts] = useState<Post[]>([]);
-  const [loading, setLoading] = useState(true);
+interface PostsPageProps {
+  posts: Post[];
+}
 
-  useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
-      .then(res => res.json())
-      .then(data => {
-        setPosts(data);
-        setLoading(false);
-      });
-  }, []);
-
+const Posts: React.FC<PostsPageProps> = ({ posts }) => {
   return (
     <>
       <Header />
@@ -30,8 +22,8 @@ const Posts: React.FC = () => {
         <p className="text-lg text-gray-700 mb-8">
           This is the posts page. You can list your posts here.
         </p>
-        {loading ? (
-          <p>Loading...</p>
+        {posts.length === 0 ? (
+          <p>No posts found.</p>
         ) : (
           posts.map(post => (
             <PostCard
@@ -46,5 +38,16 @@ const Posts: React.FC = () => {
     </>
   );
 };
+
+export async function getStaticProps() {
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=10');
+  const posts = await res.json();
+
+  return {
+    props: {
+      posts,
+    },
+  };
+}
 
 export default Posts;
