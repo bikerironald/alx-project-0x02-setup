@@ -11,3 +11,10 @@ export interface ButtonProps {
   type?: 'button' | 'submit' | 'reset';
   className?: string;
 }
+
+export interface PostProps {
+  title: string;
+  content: string;
+  author?: string;
+  date?: string;
+}
