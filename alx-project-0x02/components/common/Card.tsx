@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardProps } from '../../interfaces';
+import { type CardProps } from '../../interfaces';
 
 const Card: React.FC<CardProps> = ({ title, content }) => (
   <div className="bg-white rounded-lg shadow p-6 mb-4">
@@ -9,3 +9,5 @@ const Card: React.FC<CardProps> = ({ title, content }) => (
 );
 
 export default Card;
+// This code defines a reusable Card component in React.
+// It accepts `title` and `content` as props and renders them inside a styled card.
